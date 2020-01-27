@@ -14,6 +14,7 @@ import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import org.mifos.mobilewallet.core.domain.model.Account;
 import org.mifos.mobilewallet.core.domain.model.Transaction;
@@ -32,6 +33,7 @@ import javax.inject.Inject;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
+import butterknife.OnClick;
 
 /**
  * Created by naman on 17/8/17.
@@ -200,6 +202,13 @@ public class HomeFragment extends BaseFragment implements BaseHomeContract.HomeV
     @Override
     public void hideBottomSheetActionButton() {
         btnShowMoreTransactionsHistory.setVisibility(View.GONE);
+    }
+
+    @OnClick(R.id.btn_home_bottom_sheet_action)
+    public void onBottomSheetActionButtonClick() {
+        replaceFragment(PaymentsFragment.newInstance(), false,
+                R.id.bottom_navigation_fragment_container);
+        Toast.makeText(getContext(), "d", Toast.LENGTH_SHORT).show();
     }
 
     @Override

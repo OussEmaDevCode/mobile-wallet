@@ -30,7 +30,7 @@ android {
         abortOnError false
         disable 'InvalidPackage'
     }
-    buildToolsVersion rootProject.ext.buildToolsVersion
+    buildToolsVersion '27.0.3'
 }
 
 dependencies {
